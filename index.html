@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List | Home</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- font style  outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font style material symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+</head>
+<body>
+    <div class="todo-container">
+        <div class="content-wrapper">
+            <div class="header-section">
+                <h2 id="header-title">To-do List</h2>
+
+                <!-- input section -->
+                <form action="" id="todo-form">
+                    <input type="text" class="inputs" id="todo-input" placeholder="Add a new task..." required>
+                    <input type="date" class="inputs" id="due-date-input" required>
+                    <button type="submit" class="inputs" id="add-todo-btn"><span class="material-symbols-outlined">add</span></button>
+                </form>
+            </div>
+            <div class="main-section">
+
+                <!-- table buttons section -->
+                <div class="table-button-section">
+                    <button class="inputs table-buttons" id="filter-button">Filter Expired</button>
+                    <button class="inputs table-buttons" id="delete-all-button">Delete All</button>
+                </div>
+
+                <!-- table section -->
+                <table id="todo-table">
+                    <thead>
+                        <tr class="table-header">
+                            <th>Task</th>
+                            <th>Due Date</th>
+                            <th>Days Remaining</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- inputted contents -->
+                    <tbody id="todo-list">
+                        <tr class="placeholder">
+                            <td colspan="4">No data yet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

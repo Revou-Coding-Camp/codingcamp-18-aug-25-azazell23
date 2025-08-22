@@ -1,0 +1,185 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    background-image: url('https://w0.peakpx.com/wallpaper/115/408/HD-wallpaper-iceberg-minimalist.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    cursor: pointer;
+}
+
+.todo-container {
+    border-radius: 8px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 13px;
+    width: 90%;
+    max-width: 700px; /* cap the size on large screens */
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 50px 60px rgba(0, 0, 0, 0.6);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header-section {
+    margin: 0 10px;
+}
+
+#header-title {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+#todo-form {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.inputs {
+    font-family: "Outfit", sans-serif;
+}
+
+#todo-input {
+    flex: 2;
+    min-width: 120px;
+    border-radius: 5px;
+    border: 2px solid black;
+    height: 32px;
+    padding: 0 5px;
+}
+
+#due-date-input {
+    flex: 1;
+    min-width: 100px;
+    border-radius: 5px;
+    border: 2px solid black;
+    height: 32px;
+    padding: 0 5px;
+}
+
+#add-todo-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid black !important;
+    background-color: rgb(83, 231, 83);
+    height: 36px;
+    padding: 0 12px;
+    transition: color 0.3s ease;
+}
+
+#add-todo-btn:hover {
+    color: white;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.table-button-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+    margin-bottom: 5px;
+}
+
+.table-buttons {
+    border: 2px solid black !important;
+    border-radius: 5px;
+    height: 32px;
+    width: auto;      
+    flex: 0; 
+}
+
+#filter-button {
+    min-width: 110px;   
+    background-color: #66b3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+#filter-button:hover {
+    color: white;
+}
+
+#delete-all-button {   
+    min-width: 90px;     
+    font-size: 15px;
+    background-color: red;
+    transition: color 0.3s ease;
+}
+
+#delete-all-button:hover {
+    color: white;
+}
+
+#todo-table {
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#todo-table th,
+#todo-table td {
+    padding: 6px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.placeholder {
+    text-align: center;
+    color: black;
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.delete-button {
+    background-color: rgb(250, 17, 17);
+    transition: color 0.3s ease;
+}
+
+.edit-button {
+    background-color: rgb(35, 60, 199);
+    transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+    color: white;
+}
+
+.edit-button:hover {
+    color: white;
+}
