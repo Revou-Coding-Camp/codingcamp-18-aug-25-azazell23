@@ -98,7 +98,7 @@ function renderTable() {
         const actionsCell = document.createElement("td");
         actionsCell.className = "actions";
 
-        let [editButton, deleteButton] = createActionButtons(data.indexOf(item));
+        let [editButton, deleteButton] = createActionButtons(index);
         actionsCell.appendChild(editButton);
         actionsCell.appendChild(deleteButton);
 
@@ -141,7 +141,8 @@ function createActionButtons(index) {
     const editButton = document.createElement("button");
     editButton.className = "edit-button";
     editButton.innerHTML = '<span class="material-symbols-outlined">edit</span>';
-    editButton.addEventListener("click", function() {
+
+    editButton.addEventListener("click", function handleEdit() {
         const row = document.querySelectorAll("#todo-list tr")[index];
 
         const taskCell = row.querySelector(".task");
@@ -166,18 +167,24 @@ function createActionButtons(index) {
         // Change edit button to save button
         editButton.innerHTML = '<span class="material-symbols-outlined">check</span>';
 
-        // Change event to save new values
-        editButton.onclick = function() {
+        // Remove old listener and add save handler
+        editButton.replaceWith(editButton.cloneNode(true));
+        const saveButton = row.querySelector(".edit-button");
+        saveButton.innerHTML = '<span class="material-symbols-outlined">check</span>';
+
+        saveButton.addEventListener("click", function handleSave() {
             // Update data array
             data[index].task = taskInput.value;
             data[index].due_date = dateInput.value;
 
             // Recalculate days remaining
-            data[index].days_remaining = Math.ceil((new Date(dateInput.value) - new Date()) / (1000 * 60 * 60 * 24));
+            data[index].days_remaining = Math.ceil(
+                (new Date(dateInput.value) - new Date()) / (1000 * 60 * 60 * 24)
+            );
 
             // Re-render table
             renderTable();
-        };
+        });
     });
 
     return [editButton, deleteButton];
